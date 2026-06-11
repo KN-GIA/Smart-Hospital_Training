@@ -42,17 +42,17 @@ def load_model():
         return pickle.load(f)
 
 #menampung model
-bundle = load_model()
-model = bundle['model']
-scaler = bundle['scaler']
-features = bundle['features']
+bundle        = load_model()
+model         = bundle['model']
+scaler        = bundle['scaler']
+features      = bundle['features']
 cols_to_scale = bundle['cols_to_scale']
-dept_map_inv = bundle['dept_map_inv']
-gender_map = bundle['gender_map']
-temp_map = bundle['temp_map']
-hr_map = bundle['hr_map']
-dur_map = bundle['dur_map']
-cc_map = bundle['cc_map']
+dept_map_inv  = bundle['dept_map_inv']
+gender_map    = bundle['gender_map']
+temp_map      = bundle['temp_map']
+hr_map        = bundle['hr_map']
+dur_map       = bundle['dur_map']
+cc_map        = bundle['cc_map']
 
 
 DEPT_INFO = {
