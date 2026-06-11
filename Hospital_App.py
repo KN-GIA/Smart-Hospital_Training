@@ -123,23 +123,45 @@ with st.form("triage_form"):
     </div>
     """, unsafe_allow_html=True)
 
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3 = st.columns(3)
     with c1:
         fever            = st.checkbox("🌡️  Fever")
         cough            = st.checkbox("🤧  Cough")
-    with c2:
         headache         = st.checkbox("🤕  Headache")
+    with c2:
         chest_pain       = st.checkbox("💔  Chest Pain")
-    with c3:
         stomach_pain     = st.checkbox("🤢  Stomach Pain")
         shortness_breath = st.checkbox("😮‍💨  Shortness of Breath")
-    with c4:
+    with c3:
         nausea_vomiting  = st.checkbox("🤮  Nausea / Vomiting")
         dizziness        = st.checkbox("😵  Dizziness")
-
-    c5, _, _, _ = st.columns(4)
-    with c5:
         skin_rash = st.checkbox("🔴  Skin Rash")
+
+
+    #baris baru agar column sequence
+    #c5, _, _, _ = st.columns(4)
+    #with c5:
+        
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Section 2 — Duration & Complaint
+    st.markdown("""
+    <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:14px;
+                padding:20px 24px;margin-bottom:20px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <span style="background:#7c3aed;color:white;border-radius:8px;
+                         padding:4px 10px;font-size:12px;font-weight:600;">2</span>
+            <span style="font-size:16px;font-weight:600;color:#3b0764;">How long have you had these symptoms?</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col_cc, col_dur = st.columns(2)
+    with col_cc:
+        chief_complaint = st.selectbox("Chief complaint", options=list(cc_map.keys()))
+    with col_dur:
+        duration = st.selectbox("Duration", options=list(dur_map.keys()), index=1)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
